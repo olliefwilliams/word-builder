@@ -11,7 +11,8 @@ let position = {
 	y: 0,
 };
 
-interact(".dot")
+
+interact(".letter")
 	.draggable({
 		// By setting manualStart to true - we control the manualStart.
 		// We need to do this so that we can clone the object before we begin dragging it.
@@ -22,7 +23,7 @@ interact(".dot")
 				position.x += event.dx;
 				position.y += event.dy;
 
-				event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
+				event.target.style.transform = `translate(${(position.x)}px, ${(position.y)}px)`;
 				event.target.classList.remove("original");
 				event.target.classList.add("clone");
 			}
@@ -52,8 +53,11 @@ interact(".dot")
 			container && container.appendChild(element);
 
 			const { offsetTop, offsetLeft } = currentTarget;
-			position.x = offsetLeft;
-			position.y = offsetTop;
+			// original items have translate (-50%,-50%) on them, so we need to take that into account here
+			let halfWidth = (currentTarget.offsetWidth) / 2;
+			let halfHeight = (currentTarget.offsetHeight) / 2;
+			position.x = offsetLeft - halfWidth;
+			position.y = offsetTop - halfHeight;
 
 			// If we are moving an already existing item, we need to make sure the position object has
 			// the correct values before we start dragging it

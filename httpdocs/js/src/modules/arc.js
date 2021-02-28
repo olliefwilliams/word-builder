@@ -11,14 +11,14 @@ export default function () {
 	};
 
 
-	let dots = document.querySelectorAll(".dot--blue");
+	let letters = document.querySelectorAll(".letter");
 
 	window.addEventListener('load', updateAll);
 	window.addEventListener('resize', updateAll);
 
 	function updateAll() {
 		updateCircle();
-		updatePoints(dots);
+		updatePoints(letters);
 	}
 
 	function updateCircle() {
@@ -31,13 +31,11 @@ export default function () {
 			maxRadius = ww / 2;
 		}
 
-		console.log(`window dimensions are ${ww},${wh}`);
-		console.log(`Max radius is ${maxRadius}`);
-		let buffer = 50;
+		let buffer = ww * 0.1;
 		circle.radius = maxRadius - buffer;
 		circle.centre[0] = ww / 2;
 		circle.centre[1] = circle.radius + (buffer / 2);
-		console.log(`radius is ${circle.radius}\nCentre is ${circle.centre[0]},${circle.centre[1]}`)
+
 	}
 
 	function updatePoints(nodeList) {
@@ -45,14 +43,15 @@ export default function () {
 		origin.style.left = circle.centre[0] + "px";
 		origin.style.top = circle.centre[1] + "px";
 
-		let increment = degreeIncrement(circle.degreesSweep, dots.length);
-		nodeList.forEach(function (dot, index) {
+		let increment = degreeIncrement(circle.degreesSweep, letters.length);
+		nodeList.forEach(function (letter, index) {
 			let thisDegrees = circle.startDegrees + (index * increment);
 			let thisX = circle.centre[0] - circle.radius * Math.cos(degreesToRadians(thisDegrees));
 			let thisY = circle.centre[1] - circle.radius * Math.sin(degreesToRadians(thisDegrees));
-			dot.style.left = thisX + "px";
-			dot.style.top = thisY + "px";
-			dot.style.transform = "rotate(" + thisDegrees + "deg)";
+			letter.style.left = thisX + "px";
+			letter.style.top = thisY + "px";
+			letter.style.transform = "translate(-50%, -50%) rotate(" + (thisDegrees - 90) + "deg)";
+			// -90 degrees to ensure letter bottoms are flat against the curve
 		});
 	}
 
