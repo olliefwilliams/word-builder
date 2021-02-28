@@ -1,23 +1,6 @@
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
-html {
-}
-
-.container {
-	width: 100%;
-	height: 100%;
-	background: #0b0b0b;
-	position: absolute;
-	left: 0;
-	top: 0;
-	touch-action: none;
-	user-select: none;
-	overflow: hidden;
-}
+@import "core/base";
+@import "modules/letter";
+@import "modules/logo";
 
 .circle-origin {
 	width: 5px;
@@ -27,5 +10,3 @@ html {
 	position: absolute;
 	border-radius: 6px;
 }
-
-@import "modules/letter";
