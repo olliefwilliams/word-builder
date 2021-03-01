@@ -1,12 +1,4 @@
 @import "core/base";
 @import "modules/letter";
 @import "modules/logo";
-
-.circle-origin {
-	width: 5px;
-	height: 5px;
-	background: red;
-	display: block;
-	position: absolute;
-	border-radius: 6px;
-}
+@import "modules/circle-orgin";
