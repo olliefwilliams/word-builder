@@ -1,0 +1,23 @@
+$canvasWidth: 60;
+
+.canvas {
+	position: absolute;
+	bottom: 7.5%;
+	left: 50%;
+	width: $canvasWidth * 1vw;
+	height: $canvasWidth * 0.275 * 1vw;
+
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: space-between;
+	z-index: 1;
+}
+
+$gap: 15px;
+
+.canvas__block {
+	background-color: #ffffff;
+	margin: 0 7.5px;
+	flex-grow: 1;
+	border-radius: 1.5vw;
+}

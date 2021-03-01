@@ -4,6 +4,7 @@
 	position: absolute;
 	transform: translate(-50%, -50%);
 	width: 7vw;
+	z-index: 2;
 	&:after {
 		content: "";
 		display: block;

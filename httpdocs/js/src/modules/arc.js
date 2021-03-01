@@ -36,6 +36,10 @@ export default function () {
 		circle.centre[0] = ww / 2;
 		circle.centre[1] = circle.radius + (buffer / 2);
 
+		// give container a fixed height, so we can position things relative to it
+		// don't want it to be taller than the arc + buffer
+		document.querySelector(".container").style.height = maxRadius + "px";
+
 	}
 
 	function updatePoints(nodeList) {
