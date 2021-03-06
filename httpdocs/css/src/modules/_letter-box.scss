@@ -1,13 +1,15 @@
 $canvasWidth: 60;
 
-.canvas {
+.canvas-wrapper {
 	position: absolute;
 	bottom: 7.5%;
-	left: 50%;
 	width: $canvasWidth * 1vw;
-	height: $canvasWidth * 0.275 * 1vw;
+	margin: 0 (((100 - $canvasWidth) / 2) * 1vw);
+}
 
-	transform: translateX(-50%);
+.canvas {
+	width: 100%;
+	height: $canvasWidth * 0.275 * 1vw;
 	display: flex;
 	justify-content: space-between;
 	z-index: 1;

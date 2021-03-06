@@ -1,0 +1,35 @@
+.button-wrapper {
+	margin: 0 auto 20px;
+	display: table;
+}
+
+.split-button {
+	width: 24px;
+	height: 24px;
+	font-size: 18px;
+	background: #333;
+	color: #000;
+	border-radius: 50%;
+	margin: 0 0.125em;
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	border: 0;
+	cursor: pointer;
+	transition: all 125ms ease-in-out;
+	&:hover {
+		background: #999;
+	}
+	&.active {
+		background: #e70000;
+		color: #fff;
+	}
+	@include q(md) {
+		width: 36px;
+		height: 36px;
+		font-size: 24px;
+	}
+	@include q(xl) {
+		width: 44px;
+		height: 44px;
+		font-size: 28px;
+	}
+}

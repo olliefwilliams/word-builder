@@ -1,0 +1,23 @@
+// choose the name and size of each breakpoint
+$breakpoints: (
+	"xxs": 480,
+	"xs": 560,
+	"sm": 640,
+	"md": 720,
+	"lg": 960,
+	"xl": 1140,
+	"xxl": 1320,
+);
+
+// mixin to utilise media queries
+@mixin q($name) {
+	$mediaSize: map-get($breakpoints, $name);
+
+	@if $mediaSize == null {
+		@error "#{$name} is an undefined breakpoint name";
+	}
+
+	@media (min-width: #{$mediaSize}px) {
+		@content;
+	}
+}
