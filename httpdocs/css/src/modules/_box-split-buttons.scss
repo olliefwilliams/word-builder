@@ -1,6 +1,9 @@
 .button-wrapper {
-	margin: 0 auto 20px;
+	margin: 0 auto 10px;
 	display: table;
+	@include q(md) {
+		margin: 0 auto 20px;
+	}
 }
 
 .split-button {
@@ -15,6 +18,8 @@
 	border: 0;
 	cursor: pointer;
 	transition: all 125ms ease-in-out;
+	padding: 0;
+	text-align: center;
 	&:hover {
 		background: #999;
 	}
