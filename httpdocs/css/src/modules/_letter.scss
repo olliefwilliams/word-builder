@@ -5,6 +5,7 @@
 	transform: translate(-50%, -50%);
 	width: 7vw;
 	z-index: 2;
+	cursor: pointer;
 	&:after {
 		content: "";
 		display: block;

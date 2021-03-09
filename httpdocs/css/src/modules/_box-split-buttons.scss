@@ -27,6 +27,10 @@
 		background: #e70000;
 		color: #fff;
 	}
+	&:focus,
+	&:focus-visible {
+		outline: none;
+	}
 	@include q(md) {
 		width: 36px;
 		height: 36px;
