@@ -40,6 +40,9 @@ export default function () {
 		// don't want it to be taller than the arc + buffer
 		document.querySelector(".container").style.height = maxRadius + "px";
 
+		document.querySelector(".canvas").style.maxWidth = circle.radius * 1.5 + "px";
+		document.querySelector(".canvas").style.maxHeight = circle.radius * 0.5 + "px";
+
 	}
 
 	function updatePoints(nodeList) {

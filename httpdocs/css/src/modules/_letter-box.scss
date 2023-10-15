@@ -9,10 +9,11 @@ $canvasWidth: 60;
 
 .canvas {
 	width: 100%;
-	height: $canvasWidth * 0.275 * 1vw;
+	height: 37vmin;
 	display: flex;
 	justify-content: space-between;
 	z-index: 1;
+	margin: 0 auto;
 }
 
 $gap: 15px;
